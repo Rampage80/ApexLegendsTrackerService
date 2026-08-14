@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ApexLegendsTracker.Infrastructure\ApexLegendsTracker.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\ApexLegendsTracker.Infrastructure\ApexLegendsTracker.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
