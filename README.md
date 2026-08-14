@@ -19,7 +19,7 @@ Optional settings:
 ## Run
 
 ```powershell
-dotnet run --project ./src/ApexLegendsTracker.Api
+dotnet run --project ./ApexLegendsTracker.Api
 ```
 
 ## Endpoints
