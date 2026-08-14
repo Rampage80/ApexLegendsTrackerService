@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/ApexLegendsTracker.Api/">
+    <Project Path="ApexLegendsTracker.Api/ApexLegendsTracker.Api.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.Application/">
+    <Project Path="ApexLegendsTracker.Application/ApexLegendsTracker.Application.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.Domain/">
+    <Project Path="ApexLegendsTracker.Domain/ApexLegendsTracker.Domain.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.Infrastructure/">
+    <Project Path="ApexLegendsTracker.Infrastructure/ApexLegendsTracker.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.Api.Tests/">
+    <Project Path="ApexLegendsTracker.Api.Tests/ApexLegendsTracker.Api.Tests.csproj" />
+  </Folder>
+   <Folder Name="/ApexLegendsTracker.Application.Tests/">
+    <Project Path="ApexLegendsTracker.Application.Tests/ApexLegendsTracker.Application.Tests.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.Infrastructure.Tests/">
+    <Project Path="ApexLegendsTracker.Infrastructure.Tests/ApexLegendsTracker.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>
