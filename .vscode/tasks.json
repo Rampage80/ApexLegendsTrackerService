@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/ApexLegendsTracker.Api/ApexLegendsTracker.Api.csproj",
+                "${workspaceFolder}/ApexLegendsTracker.WebAPI/ApexLegendsTracker.WebAPI.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

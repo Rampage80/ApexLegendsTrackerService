@@ -1,8 +1,7 @@
 using ApexLegendsTracker.Application.Players;
-using ApexLegendsTracker.Domain.Players;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApexLegendsTracker.Api.Controllers;
+namespace ApexLegendsTracker.WebAPI.Controllers;
 
 [ApiController]
 [Route("api/v1/players")]

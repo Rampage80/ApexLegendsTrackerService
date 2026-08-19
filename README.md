@@ -1,4 +1,4 @@
-# ApexLegendsTracker API
+# ApexLegendsTracker WebAPI
 
 RESTful backend for ApexLegendsTracker.
 
@@ -19,7 +19,7 @@ Optional settings:
 ## Run
 
 ```powershell
-dotnet run --project ./ApexLegendsTracker.Api
+dotnet run --project ./ApexLegendsTracker.WebAPI
 ```
 
 ## Endpoints

@@ -1,23 +1,20 @@
 <Solution>
-  <Folder Name="/ApexLegendsTracker.Api/">
-    <Project Path="ApexLegendsTracker.Api/ApexLegendsTracker.Api.csproj" />
+  <Folder Name="/ApexLegendsTracker.WebAPI/">
+    <Project Path="ApexLegendsTracker.WebAPI/ApexLegendsTracker.WebAPI.csproj" />
   </Folder>
   <Folder Name="/ApexLegendsTracker.Application/">
     <Project Path="ApexLegendsTracker.Application/ApexLegendsTracker.Application.csproj" />
   </Folder>
-  <Folder Name="/ApexLegendsTracker.Domain/">
-    <Project Path="ApexLegendsTracker.Domain/ApexLegendsTracker.Domain.csproj" />
+  <Folder Name="/ApexLegendsTracker.Service/">
+    <Project Path="ApexLegendsTracker.Service/ApexLegendsTracker.Service.csproj" />
   </Folder>
-  <Folder Name="/ApexLegendsTracker.Infrastructure/">
-    <Project Path="ApexLegendsTracker.Infrastructure/ApexLegendsTracker.Infrastructure.csproj" />
-  </Folder>
-  <Folder Name="/ApexLegendsTracker.Api.Tests/">
-    <Project Path="ApexLegendsTracker.Api.Tests/ApexLegendsTracker.Api.Tests.csproj" />
+  <Folder Name="/ApexLegendsTracker.WebAPI.Tests/">
+    <Project Path="ApexLegendsTracker.WebAPI.Tests/ApexLegendsTracker.WebAPI.Tests.csproj" />
   </Folder>
    <Folder Name="/ApexLegendsTracker.Application.Tests/">
     <Project Path="ApexLegendsTracker.Application.Tests/ApexLegendsTracker.Application.Tests.csproj" />
   </Folder>
-  <Folder Name="/ApexLegendsTracker.Infrastructure.Tests/">
-    <Project Path="ApexLegendsTracker.Infrastructure.Tests/ApexLegendsTracker.Infrastructure.Tests.csproj" />
+  <Folder Name="/ApexLegendsTracker.Service.Tests/">
+    <Project Path="ApexLegendsTracker.Service.Tests/ApexLegendsTracker.Service.Tests.csproj" />
   </Folder>
 </Solution>

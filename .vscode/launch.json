@@ -2,12 +2,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug ApexLegendsTracker.Api",
+            "name": "Debug ApexLegendsTracker.WebAPI",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ApexLegendsTracker.Api/bin/Debug/net10.0/ApexLegendsTracker.Api.dll",
-            "cwd": "${workspaceFolder}/ApexLegendsTracker.Api",
+            "program": "${workspaceFolder}/ApexLegendsTracker.WebAPI/bin/Debug/net10.0/ApexLegendsTracker.WebAPI.dll",
+            "cwd": "${workspaceFolder}/ApexLegendsTracker.WebAPI",
             "stopAtEntry": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",

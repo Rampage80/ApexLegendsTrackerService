@@ -1,4 +1,4 @@
-namespace ApexLegendsTracker.Infrastructure.Options;
+namespace ApexLegendsTracker.Service.Options;
 
 public sealed class ApexApiOptions
 {

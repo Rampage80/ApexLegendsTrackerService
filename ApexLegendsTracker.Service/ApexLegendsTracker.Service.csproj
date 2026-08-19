@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApexLegendsTracker.Application\ApexLegendsTracker.Application.csproj" />
-    <ProjectReference Include="..\ApexLegendsTracker.Domain\ApexLegendsTracker.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

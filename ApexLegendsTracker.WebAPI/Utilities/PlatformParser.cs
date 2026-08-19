@@ -1,4 +1,4 @@
-namespace ApexLegendsTracker.Domain.Players;
+namespace ApexLegendsTracker.WebAPI;
 
 public static class PlatformParser
 {

@@ -1,4 +1,4 @@
-﻿namespace ApexLegendsTracker.Api.Tests;
+﻿namespace ApexLegendsTracker.WebAPI.Tests;
 
 public class UnitTest1
 {

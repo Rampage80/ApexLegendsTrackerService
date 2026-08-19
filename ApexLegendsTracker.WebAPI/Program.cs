@@ -1,6 +1,6 @@
 using ApexLegendsTracker.Application.Players;
-using ApexLegendsTracker.Infrastructure.Options;
-using ApexLegendsTracker.Infrastructure.Services;
+using ApexLegendsTracker.Service.Options;
+using ApexLegendsTracker.Service.Services;
 
 const string WebClientCorsPolicy = "WebClient";
 

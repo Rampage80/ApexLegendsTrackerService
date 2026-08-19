@@ -1,8 +1,8 @@
 using ApexLegendsTracker.Application.Players;
-using ApexLegendsTracker.Infrastructure.Options;
+using ApexLegendsTracker.Service.Options;
 using Microsoft.Extensions.Options;
 
-namespace ApexLegendsTracker.Infrastructure.Services;
+namespace ApexLegendsTracker.Service.Services;
 
 public sealed class ApexTrackerService : IApexTrackerService
 {
