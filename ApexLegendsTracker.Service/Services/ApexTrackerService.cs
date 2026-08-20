@@ -1,11 +1,17 @@
-using ApexLegendsTracker.Application.Players;
+using System.Text.Json;
 using ApexLegendsTracker.Service.Options;
+using ApexLegendsTracker.Shared;
 using Microsoft.Extensions.Options;
 
 namespace ApexLegendsTracker.Service.Services;
 
-public sealed class ApexTrackerService : IApexTrackerService
+public sealed class ApexTrackerService : IPlayerLookupContract
 {
+	private static readonly JsonSerializerOptions UpstreamJsonOptions = new()
+	{
+		PropertyNameCaseInsensitive = true
+	};
+
 	private readonly HttpClient _httpClient;
 	private readonly ApexApiOptions _options;
 
@@ -48,6 +54,12 @@ public sealed class ApexTrackerService : IApexTrackerService
 				response.StatusCode);
 		}
 
-		return new PlayerLookupResult(playerName, platform, body);
+		PlayerLookupResult result = JsonSerializer.Deserialize<PlayerLookupResult>(body, UpstreamJsonOptions)
+			?? throw new HttpRequestException("Apex API returned an empty response body.");
+
+		result.PlayerName = playerName;
+		result.Platform = platform;
+
+		return result;
 	}
 }

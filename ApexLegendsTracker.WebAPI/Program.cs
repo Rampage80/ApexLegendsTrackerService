@@ -1,4 +1,4 @@
-using ApexLegendsTracker.Application.Players;
+using ApexLegendsTracker.Shared;
 using ApexLegendsTracker.Service.Options;
 using ApexLegendsTracker.Service.Services;
 
@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services
 	.Configure<ApexApiOptions>(builder.Configuration.GetSection(ApexApiOptions.SectionName));
 
-builder.Services.AddHttpClient<IApexTrackerService, ApexTrackerService>();
+builder.Services.AddHttpClient<IPlayerLookupContract, ApexTrackerService>();
 
 // Origins the client app (ApexLegendsTrackerWeb) is served from; configure via Cors:AllowedOrigins.
 string[] allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? [];
