@@ -1,6 +1,7 @@
 using ApexLegendsTracker.Shared;
 using ApexLegendsTracker.Service.Options;
 using ApexLegendsTracker.Service.Services;
+using Scalar.AspNetCore;
 
 const string WebClientCorsPolicy = "WebClient";
 
@@ -32,6 +33,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
 	app.MapOpenApi();
+	// Swagger-style interactive docs at /scalar/v1, backed by the /openapi/v1.json document.
+	app.MapScalarApiReference();
 }
 
 app.UseCors(WebClientCorsPolicy);

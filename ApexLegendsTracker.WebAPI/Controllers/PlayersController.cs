@@ -14,7 +14,20 @@ public sealed class PlayersController : ControllerBase
 		_apexTrackerService = apexTrackerService;
 	}
 
+	/// <summary>
+	/// Looks up an Apex Legends player's stats by platform and player name.
+	/// </summary>
+	/// <param name="platform">The player's platform: <c>PC</c>, <c>PS4</c>, or <c>X1</c> (case-insensitive).</param>
+	/// <param name="playerName">The exact in-game player name to search for.</param>
+	/// <param name="cancellationToken">Cancellation token for the request.</param>
+	/// <response code="200">The player was found and their stats are returned.</response>
+	/// <response code="400">The player name is missing or the platform is not one of the supported values.</response>
+	/// <response code="404">No player with the given name was found on the given platform.</response>
 	[HttpGet("{platform}/{playerName}")]
+	[ProducesResponseType(typeof(PlayerLookupResult), StatusCodes.Status200OK)]
+	[ProducesResponseType(StatusCodes.Status400BadRequest)]
+	[ProducesResponseType(StatusCodes.Status404NotFound)]
+	[ProducesResponseType(StatusCodes.Status502BadGateway)]
 	public async Task<ActionResult<PlayerLookupResult>> GetByName(
 		string platform,
 		string playerName,
