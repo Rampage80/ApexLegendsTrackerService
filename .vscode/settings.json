@@ -1,0 +1,17 @@
+{
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/.git": true
+  },
+  "search.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/.git": true
+  },
+  "files.watcherExclude": {
+    "**/bin/**": true,
+    "**/obj/**": true,
+    "**/.git/**": true
+  }
+}
