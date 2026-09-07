@@ -22,4 +22,8 @@
     <ProjectReference Include="..\ApexLegendsTracker.Service\ApexLegendsTracker.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="APIResponseData\*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>

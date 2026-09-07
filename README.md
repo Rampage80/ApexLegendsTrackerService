@@ -26,6 +26,8 @@ dotnet run --project ./ApexLegendsTracker.WebAPI
 
 - `GET /api/v1/health`
 - `GET /api/v1/players/{platform}/{playerName}`
+- `GET /api/v1/map-rotation?version=1|2`
+- `GET /api/v1/predator-thresholds`
 
 Supported `platform` values:
 
@@ -58,6 +60,18 @@ Example:
 ```powershell
 curl "https://localhost:5001/api/v1/players/PC/somePlayerName"
 ```
+
+### GET /api/v1/map-rotation
+
+Returns a typed map rotation payload with `battle_royale`, `ranked`, `ltm`, and `wildcard` modes. Each mode contains `current` and `next` entries. LTM entries include the upstream `eventName` when present. The optional `version` query parameter accepts `1` or `2`; when omitted, the upstream default is used.
+
+### GET /api/v1/predator-thresholds
+
+Returns typed Predator thresholds under `RP` for `PC`, `PS4`, and `X1`. The upstream `SWITCH` platform is excluded.
+
+Both status endpoints return `502 Bad Gateway` when the upstream response is invalid JSON or unavailable. Documented upstream status codes are passed through with an `apex_upstream_error` body and trace identifier. An unsupported map-rotation version returns `400 Bad Request`.
+
+Map rotation and Predator responses are cached in process for one minute to reduce calls to the upstream API. Player lookups are not cached. This cache is intentionally non-distributed; moving to a distributed cache is a future improvement if the service scales across multiple instances.
 
 ### Interactive API docs (Swagger-style)
 

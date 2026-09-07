@@ -2,17 +2,11 @@
   <Folder Name="/ApexLegendsTracker.WebAPI/">
     <Project Path="ApexLegendsTracker.WebAPI/ApexLegendsTracker.WebAPI.csproj" />
   </Folder>
-  <Folder Name="/ApexLegendsTracker.Application/">
-    <Project Path="ApexLegendsTracker.Application/ApexLegendsTracker.Application.csproj" />
-  </Folder>
   <Folder Name="/ApexLegendsTracker.Service/">
     <Project Path="ApexLegendsTracker.Service/ApexLegendsTracker.Service.csproj" />
   </Folder>
   <Folder Name="/ApexLegendsTracker.WebAPI.Tests/">
     <Project Path="ApexLegendsTracker.WebAPI.Tests/ApexLegendsTracker.WebAPI.Tests.csproj" />
-  </Folder>
-   <Folder Name="/ApexLegendsTracker.Application.Tests/">
-    <Project Path="ApexLegendsTracker.Application.Tests/ApexLegendsTracker.Application.Tests.csproj" />
   </Folder>
   <Folder Name="/ApexLegendsTracker.Service.Tests/">
     <Project Path="ApexLegendsTracker.Service.Tests/ApexLegendsTracker.Service.Tests.csproj" />

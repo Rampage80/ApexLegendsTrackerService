@@ -9,11 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+builder.Services.AddMemoryCache();
 
 builder.Services
 	.Configure<ApexApiOptions>(builder.Configuration.GetSection(ApexApiOptions.SectionName));
 
-builder.Services.AddHttpClient<IPlayerLookupContract, ApexTrackerService>();
+builder.Services.AddHttpClient<IApexApiClient, ApexApiClient>();
+builder.Services.AddTransient<ApexTrackerService>();
+builder.Services.AddTransient<IApexPlayerContract>(services => services.GetRequiredService<ApexTrackerService>());
+builder.Services.AddTransient<IApexGlobalContract>(services => services.GetRequiredService<ApexTrackerService>());
 
 // Origins the client app (ApexLegendsTrackerWeb) is served from; configure via Cors:AllowedOrigins.
 string[] allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? [];

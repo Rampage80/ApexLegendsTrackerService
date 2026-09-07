@@ -1,0 +1,32 @@
+{
+    "RP": {
+        "PC": {
+            "foundRank": 750,
+            "val": 31539,
+            "uid": "1010850863086",
+            "updateTimestamp": 1788804329,
+            "totalMastersAndPreds": 9596
+        },
+        "PS4": {
+            "foundRank": 750,
+            "val": 24887,
+            "uid": "271704895878903549",
+            "updateTimestamp": 1788804353,
+            "totalMastersAndPreds": 4280
+        },
+        "X1": {
+            "foundRank": 751,
+            "val": 19343,
+            "uid": "2535428710891678",
+            "updateTimestamp": 1788804368,
+            "totalMastersAndPreds": 1919
+        },
+        "SWITCH": {
+            "foundRank": -1,
+            "val": 16000,
+            "uid": "-1",
+            "updateTimestamp": 1788804368,
+            "totalMastersAndPreds": 371
+        }
+    }
+}

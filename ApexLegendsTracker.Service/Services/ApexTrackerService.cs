@@ -1,29 +1,14 @@
-using System.Text.Json;
-using ApexLegendsTracker.Service.Options;
 using ApexLegendsTracker.Shared;
-using Microsoft.Extensions.Options;
 
 namespace ApexLegendsTracker.Service.Services;
 
-public sealed class ApexTrackerService : IPlayerLookupContract
+public sealed class ApexTrackerService : IApexPlayerContract, IApexGlobalContract
 {
-	private static readonly JsonSerializerOptions UpstreamJsonOptions = new()
+	private readonly IApexApiClient _apiClient;
+
+	public ApexTrackerService(IApexApiClient apiClient)
 	{
-		PropertyNameCaseInsensitive = true
-	};
-
-	private readonly HttpClient _httpClient;
-	private readonly ApexApiOptions _options;
-
-	public ApexTrackerService(HttpClient httpClient, IOptions<ApexApiOptions> options)
-	{
-		_httpClient = httpClient;
-		_options = options.Value;
-
-		if (_httpClient.BaseAddress is null)
-		{
-			_httpClient.BaseAddress = new Uri(_options.BaseUrl);
-		}
+		_apiClient = apiClient;
 	}
 
 	public async Task<PlayerLookupResult> QueryByNameAsync(
@@ -31,35 +16,31 @@ public sealed class ApexTrackerService : IPlayerLookupContract
 		string platform,
 		CancellationToken cancellationToken = default)
 	{
-		if (string.IsNullOrWhiteSpace(_options.ApiKey))
-		{
-			throw new InvalidOperationException("Apex API key is not configured.");
-		}
-
 		string encodedPlayer = Uri.EscapeDataString(playerName);
 		string encodedPlatform = Uri.EscapeDataString(platform);
 		string requestUri = $"bridge?player={encodedPlayer}&platform={encodedPlatform}&version=5";
 
-		using HttpRequestMessage request = new(HttpMethod.Get, requestUri);
-		request.Headers.TryAddWithoutValidation("Authorization", _options.ApiKey);
-
-		using HttpResponseMessage response = await _httpClient.SendAsync(request, cancellationToken);
-		string body = await response.Content.ReadAsStringAsync(cancellationToken);
-
-		if (!response.IsSuccessStatusCode)
-		{
-			throw new HttpRequestException(
-				$"Apex API request failed with status {(int)response.StatusCode}.",
-				null,
-				response.StatusCode);
-		}
-
-		PlayerLookupResult result = JsonSerializer.Deserialize<PlayerLookupResult>(body, UpstreamJsonOptions)
-			?? throw new HttpRequestException("Apex API returned an empty response body.");
+		PlayerLookupResult result = await _apiClient.GetAsync<PlayerLookupResult>(requestUri, cancellationToken);
 
 		result.PlayerName = playerName;
 		result.Platform = platform;
 
 		return result;
+	}
+
+	public Task<MapRotationResponse> GetMapRotationAsync(
+		string? version,
+		CancellationToken cancellationToken = default)
+	{
+		string requestUri = string.IsNullOrWhiteSpace(version)
+			? "maprotation"
+			: $"maprotation?version={Uri.EscapeDataString(version)}";
+
+		return _apiClient.GetCachedAsync<MapRotationResponse>(requestUri, cancellationToken);
+	}
+
+	public Task<PredatorResponse> GetPredatorThresholdsAsync(CancellationToken cancellationToken = default)
+	{
+		return _apiClient.GetCachedAsync<PredatorResponse>("predator", cancellationToken);
 	}
 }

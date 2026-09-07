@@ -1,0 +1,114 @@
+{
+    "battle_royale": {
+        "current": {
+            "start": 1788805800,
+            "end": 1788811200,
+            "readableDate_start": "2026-09-07 18:30:00",
+            "readableDate_end": "2026-09-07 20:00:00",
+            "map": "Storm Point",
+            "code": "storm_point_rotation",
+            "DurationInSecs": 5400,
+            "DurationInMinutes": 90,
+            "asset": "https://apexlegendsstatus.com/assets/maps/Storm_Point.png",
+            "remainingSecs": 4687,
+            "remainingMins": 78,
+            "remainingTimer": "01:18:07"
+        },
+        "next": {
+            "start": 1788811200,
+            "end": 1788816600,
+            "readableDate_start": "2026-09-07 20:00:00",
+            "readableDate_end": "2026-09-07 21:30:00",
+            "map": "E-District",
+            "code": "edistrict_rotation",
+            "DurationInSecs": 5400,
+            "DurationInMinutes": 90,
+            "asset": "https://apexlegendsstatus.com/assets/maps/E-District.png"
+        }
+    },
+    "ranked": {
+        "current": {
+            "start": 1788795000,
+            "end": 1788811200,
+            "readableDate_start": "2026-09-07 15:30:00",
+            "readableDate_end": "2026-09-07 20:00:00",
+            "map": "E-District",
+            "code": "edistrict_rotation",
+            "DurationInSecs": 16200,
+            "DurationInMinutes": 270,
+            "asset": "https://apexlegendsstatus.com/assets/maps/E-District.png",
+            "remainingSecs": 4687,
+            "remainingMins": 78,
+            "remainingTimer": "01:18:07"
+        },
+        "next": {
+            "start": 1788811200,
+            "end": 1788827400,
+            "readableDate_start": "2026-09-07 20:00:00",
+            "readableDate_end": "2026-09-08 00:30:00",
+            "map": "World's Edge",
+            "code": "worlds_edge_rotation",
+            "DurationInSecs": 16200,
+            "DurationInMinutes": 270,
+            "asset": "https://apexlegendsstatus.com/assets/maps/Worlds_Edge.png"
+        }
+    },
+    "ltm": {
+        "current": {
+            "start": 1788805800,
+            "end": 1788806700,
+            "readableDate_start": "2026-09-07 18:30:00",
+            "readableDate_end": "2026-09-07 18:45:00",
+            "map": "Monument",
+            "code": "freedm_tdm_monument",
+            "DurationInSecs": 900,
+            "DurationInMinutes": 15,
+            "isActive": true,
+            "eventName": "TDM",
+            "asset": "https://apexlegendsstatus.com/assets/maps/Worlds_Edge.png",
+            "remainingSecs": 187,
+            "remainingMins": 3,
+            "remainingTimer": "00:03:07"
+        },
+        "next": {
+            "start": 1788806700,
+            "end": 1788807600,
+            "readableDate_start": "2026-09-07 18:45:00",
+            "readableDate_end": "2026-09-07 19:00:00",
+            "map": "Barometer",
+            "code": "control_barometer",
+            "DurationInSecs": 900,
+            "DurationInMinutes": 15,
+            "isActive": true,
+            "eventName": "Control",
+            "asset": "https://apexlegendsstatus.com/assets/maps/Storm_Point.png"
+        }
+    },
+    "wildcard": {
+        "current": {
+            "start": 1788805800,
+            "end": 1788811200,
+            "readableDate_start": "2026-09-07 18:30:00",
+            "readableDate_end": "2026-09-07 20:00:00",
+            "map": "Kings Canyon",
+            "code": "kings_canyon_rotation",
+            "DurationInSecs": 5400,
+            "DurationInMinutes": 90,
+            "asset": "https://apexlegendsstatus.com/assets/maps/Kings_Canyon.png",
+            "remainingSecs": 4687,
+            "remainingMins": 78,
+            "remainingTimer": "01:18:07"
+        },
+        "next": {
+            "start": 1788811200,
+            "end": 1788816600,
+            "readableDate_start": "2026-09-07 20:00:00",
+            "readableDate_end": "2026-09-07 21:30:00",
+            "map": "E-District",
+            "code": "edistrict_rotation",
+            "DurationInSecs": 5400,
+            "DurationInMinutes": 90,
+            "asset": "https://apexlegendsstatus.com/assets/maps/E-District.png"
+        }
+    }
+}

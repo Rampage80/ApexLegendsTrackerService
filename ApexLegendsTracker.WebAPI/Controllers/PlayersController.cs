@@ -1,4 +1,5 @@
 using ApexLegendsTracker.Shared;
+using ApexLegendsTracker.Service.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApexLegendsTracker.WebAPI.Controllers;
@@ -7,9 +8,9 @@ namespace ApexLegendsTracker.WebAPI.Controllers;
 [Route("api/v1/players")]
 public sealed class PlayersController : ControllerBase
 {
-	private readonly IPlayerLookupContract _apexTrackerService;
+	private readonly IApexPlayerContract _apexTrackerService;
 
-	public PlayersController(IPlayerLookupContract apexTrackerService)
+	public PlayersController(IApexPlayerContract apexTrackerService)
 	{
 		_apexTrackerService = apexTrackerService;
 	}
