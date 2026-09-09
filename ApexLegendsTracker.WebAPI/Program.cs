@@ -10,6 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddMemoryCache();
+// Custom env var name (not the SDK default APPLICATIONINSIGHTS_CONNECTION_STRING); no-ops if unset.
+string? appInsightsConnectionString = builder.Configuration["APEXSERVICE_APPINSIGHTS_CONNECTION_STRING"]
+	?? Environment.GetEnvironmentVariable("APEXSERVICE_APPINSIGHTS_CONNECTION_STRING");
+
+if (!string.IsNullOrWhiteSpace(appInsightsConnectionString))
+{
+	builder.Services.AddApplicationInsightsTelemetry(options =>
+	{
+		options.ConnectionString = appInsightsConnectionString;
+	});
+}
 
 builder.Services
 	.Configure<ApexApiOptions>(builder.Configuration.GetSection(ApexApiOptions.SectionName));
@@ -27,7 +38,8 @@ builder.Services.AddCors(options =>
 	{
 		if (allowedOrigins.Length > 0)
 		{
-			policy.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod();
+			// Request-Context exposure lets the Web tier's App Insights JS SDK correlate its calls with this API's telemetry.
+			policy.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod().WithExposedHeaders("Request-Context");
 		}
 	});
 });

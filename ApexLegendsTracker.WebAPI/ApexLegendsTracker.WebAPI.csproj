@@ -13,6 +13,7 @@
     <PackageReference Include="Scalar.AspNetCore" Version="2.17.1" />
     <!-- Pin transitive Microsoft.OpenApi to patch CVE-2026-49451 (stack overflow on circular schema refs). -->
     <PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.23.0" />
   </ItemGroup>
 
   <ItemGroup>

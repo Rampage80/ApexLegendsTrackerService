@@ -1,15 +1,19 @@
 using ApexLegendsTracker.Service.Services;
 using ApexLegendsTracker.Shared;
+using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace ApexLegendsTracker.Service.Tests;
 
 public sealed class ApexTrackerServiceTests
 {
+	private static readonly TelemetryClient TelemetryClient = new(TelemetryConfiguration.CreateDefault());
+
 	[Fact]
 	public async Task QueryByNameAsync_EncodesRequestValuesAndEnrichesResult()
 	{
 		FakeApexApiClient apiClient = new(new PlayerLookupResult());
-		ApexTrackerService service = new(apiClient);
+		ApexTrackerService service = new(apiClient, TelemetryClient);
 
 		PlayerLookupResult result = await service.QueryByNameAsync("Player One", "PS4");
 
@@ -22,7 +26,7 @@ public sealed class ApexTrackerServiceTests
 	public async Task GetMapRotationAsync_UsesDefaultPathWhenVersionIsMissing()
 	{
 		FakeApexApiClient apiClient = new(new MapRotationResponse());
-		ApexTrackerService service = new(apiClient);
+		ApexTrackerService service = new(apiClient, TelemetryClient);
 
 		await service.GetMapRotationAsync(" ");
 
@@ -33,7 +37,7 @@ public sealed class ApexTrackerServiceTests
 	public async Task GetMapRotationAsync_IncludesVersionWhenProvided()
 	{
 		FakeApexApiClient apiClient = new(new MapRotationResponse());
-		ApexTrackerService service = new(apiClient);
+		ApexTrackerService service = new(apiClient, TelemetryClient);
 
 		await service.GetMapRotationAsync("2");
 
@@ -44,7 +48,7 @@ public sealed class ApexTrackerServiceTests
 	public async Task GetPredatorThresholdsAsync_UsesPredatorPath()
 	{
 		FakeApexApiClient apiClient = new(new PredatorResponse());
-		ApexTrackerService service = new(apiClient);
+		ApexTrackerService service = new(apiClient, TelemetryClient);
 
 		await service.GetPredatorThresholdsAsync();
 
