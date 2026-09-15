@@ -54,7 +54,7 @@ public sealed class ApexTrackerService : IApexPlayerContract, IApexGlobalContrac
 		}
 	}
 
-	public Task<MapRotationResponse> GetMapRotationAsync(
+	public Task<MapRotationResult> GetMapRotationAsync(
 		string? version,
 		CancellationToken cancellationToken = default)
 	{
@@ -66,13 +66,13 @@ public sealed class ApexTrackerService : IApexPlayerContract, IApexGlobalContrac
 			TelemetryEvents.MapRotationRequested,
 			new Dictionary<string, string> { [TelemetryProperties.MapRotationVersion] = version ?? "default" });
 
-		return _apiClient.GetCachedAsync<MapRotationResponse>(requestUri, cancellationToken);
+		return _apiClient.GetCachedAsync<MapRotationResult>(requestUri, cancellationToken);
 	}
 
-	public Task<PredatorResponse> GetPredatorThresholdsAsync(CancellationToken cancellationToken = default)
+	public Task<PredatorResult> GetPredatorThresholdsAsync(CancellationToken cancellationToken = default)
 	{
 		_telemetryClient.TrackEvent(TelemetryEvents.PredatorThresholdsRequested);
 
-		return _apiClient.GetCachedAsync<PredatorResponse>("predator", cancellationToken);
+		return _apiClient.GetCachedAsync<PredatorResult>("predator", cancellationToken);
 	}
 }

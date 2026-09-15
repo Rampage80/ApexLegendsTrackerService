@@ -3,12 +3,12 @@ using ApexLegendsTracker.Shared;
 
 namespace ApexLegendsTracker.GameStats.Tests;
 
-public sealed class MapRotationResponseTests
+public sealed class MapRotationResultTests
 {
 	[Fact]
 	public void CapturedResponse_MapsModesAndCurrentNextEntries()
 	{
-		MapRotationResponse response = Deserialize<MapRotationResponse>("MapRotation_APIReturns.json");
+		MapRotationResult response = Deserialize<MapRotationResult>("MapRotation_APIReturns.json");
 
 		Assert.Equal("Storm Point", response.BattleRoyale?.Current?.Map);
 		Assert.Equal("E-District", response.BattleRoyale?.Next?.Map);

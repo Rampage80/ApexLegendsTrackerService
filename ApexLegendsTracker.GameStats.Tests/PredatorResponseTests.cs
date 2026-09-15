@@ -3,12 +3,12 @@ using ApexLegendsTracker.Shared;
 
 namespace ApexLegendsTracker.GameStats.Tests;
 
-public sealed class PredatorResponseTests
+public sealed class PredatorResultTests
 {
 	[Fact]
 	public void CapturedResponse_MapsSupportedPlatformsAndExcludesSwitch()
 	{
-		PredatorResponse response = Deserialize<PredatorResponse>("Predator_APIReturns.json");
+		PredatorResult response = Deserialize<PredatorResult>("Predator_APIReturns.json");
 
 		Assert.Equal(31539, response.RP?.PC?.Val);
 		Assert.Equal(24887, response.RP?.PS4?.Val);

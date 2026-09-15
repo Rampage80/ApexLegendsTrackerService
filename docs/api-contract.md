@@ -15,8 +15,8 @@ This is the backend repository's concise reference for AI-assisted API changes. 
 - The API base URL and API key are configured through `ApexApi`; CORS origins are configured through `Cors:AllowedOrigins`.
 - Map rotation is exposed as `GET /api/v1/map-rotation`, with optional `version=1|2`.
 - Predator thresholds are exposed as `GET /api/v1/predator-thresholds`.
-- Map rotation responses use `MapRotationResponse`, with `BattleRoyale`, `Ranked`, `Ltm`, and `Wildcard` modes. Each mode has `Current` and `Next` entries sharing the `MapRotationEntry` shape. LTM entries include `EventName` when provided.
-- Predator responses use `PredatorResponse.RP` with `PC`, `PS4`, and `X1` thresholds. The upstream `SWITCH` platform is intentionally excluded.
+- Map rotation responses use `MapRotationResult`, with `BattleRoyale`, `Ranked`, `Ltm`, and `Wildcard` modes. Each mode has `Current` and `Next` entries sharing the `MapRotationEntry` shape. LTM entries include `EventName` when provided.
+- Predator responses use `PredatorResult.RP` with `PC`, `PS4`, and `X1` thresholds. The upstream `SWITCH` platform is intentionally excluded.
 - The DTOs map the captured upstream response fields; do not invent or rename fields without a new contract decision.
 - Invalid map-rotation versions return `400`; upstream failures and invalid upstream JSON return an error response with a trace identifier.
 - Map rotation and Predator responses use a one-minute in-process memory cache to reduce upstream calls. Player lookups are intentionally not cached because each result is enriched with the requested player metadata.

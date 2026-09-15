@@ -25,7 +25,7 @@ public sealed class ApexTrackerServiceTests
 	[Fact]
 	public async Task GetMapRotationAsync_UsesDefaultPathWhenVersionIsMissing()
 	{
-		FakeApexApiClient apiClient = new(new MapRotationResponse());
+		FakeApexApiClient apiClient = new(new MapRotationResult());
 		ApexTrackerService service = new(apiClient, TelemetryClient);
 
 		await service.GetMapRotationAsync(" ");
@@ -36,7 +36,7 @@ public sealed class ApexTrackerServiceTests
 	[Fact]
 	public async Task GetMapRotationAsync_IncludesVersionWhenProvided()
 	{
-		FakeApexApiClient apiClient = new(new MapRotationResponse());
+		FakeApexApiClient apiClient = new(new MapRotationResult());
 		ApexTrackerService service = new(apiClient, TelemetryClient);
 
 		await service.GetMapRotationAsync("2");
@@ -47,7 +47,7 @@ public sealed class ApexTrackerServiceTests
 	[Fact]
 	public async Task GetPredatorThresholdsAsync_UsesPredatorPath()
 	{
-		FakeApexApiClient apiClient = new(new PredatorResponse());
+		FakeApexApiClient apiClient = new(new PredatorResult());
 		ApexTrackerService service = new(apiClient, TelemetryClient);
 
 		await service.GetPredatorThresholdsAsync();

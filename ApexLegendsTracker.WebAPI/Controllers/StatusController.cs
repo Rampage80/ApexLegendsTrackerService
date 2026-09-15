@@ -16,10 +16,10 @@ public sealed class StatusController : ControllerBase
 	}
 
 	[HttpGet("map-rotation")]
-	[ProducesResponseType(typeof(MapRotationResponse), StatusCodes.Status200OK)]
+	[ProducesResponseType(typeof(MapRotationResult), StatusCodes.Status200OK)]
 	[ProducesResponseType(StatusCodes.Status400BadRequest)]
 	[ProducesResponseType(StatusCodes.Status502BadGateway)]
-	public async Task<ActionResult<MapRotationResponse>> GetMapRotation(
+	public async Task<ActionResult<MapRotationResult>> GetMapRotation(
 		[FromQuery] string? version,
 		CancellationToken cancellationToken)
 	{
@@ -37,9 +37,9 @@ public sealed class StatusController : ControllerBase
 	}
 
 	[HttpGet("predator-thresholds")]
-	[ProducesResponseType(typeof(PredatorResponse), StatusCodes.Status200OK)]
+	[ProducesResponseType(typeof(PredatorResult), StatusCodes.Status200OK)]
 	[ProducesResponseType(StatusCodes.Status502BadGateway)]
-	public Task<ActionResult<PredatorResponse>> GetPredatorThresholds(CancellationToken cancellationToken)
+	public Task<ActionResult<PredatorResult>> GetPredatorThresholds(CancellationToken cancellationToken)
 	{
 		return ExecuteAsync(
 			() => _statusContract.GetPredatorThresholdsAsync(cancellationToken));

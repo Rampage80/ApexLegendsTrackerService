@@ -4,7 +4,7 @@ namespace ApexLegendsTracker.GameStats.Service;
 
 public interface IApexGlobalContract
 {
-	Task<MapRotationResponse> GetMapRotationAsync(string? version, CancellationToken cancellationToken = default);
+	Task<MapRotationResult> GetMapRotationAsync(string? version, CancellationToken cancellationToken = default);
 
-	Task<PredatorResponse> GetPredatorThresholdsAsync(CancellationToken cancellationToken = default);
+	Task<PredatorResult> GetPredatorThresholdsAsync(CancellationToken cancellationToken = default);
 }
