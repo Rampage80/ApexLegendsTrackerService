@@ -2,7 +2,7 @@ using ApexLegendsTracker.Shared;
 using ApexLegendsTracker.Shared.Telemetry;
 using Microsoft.ApplicationInsights;
 
-namespace ApexLegendsTracker.Service.Services;
+namespace ApexLegendsTracker.GameStats.Service;
 
 public sealed class ApexTrackerService : IApexPlayerContract, IApexGlobalContract
 {

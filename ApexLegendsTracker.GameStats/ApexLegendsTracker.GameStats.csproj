@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApexLegendsTrackerShared" Version="1.6.0" />
+    <PackageReference Include="ApexLegendsTrackerShared" Version="1.7.0" />
     <PackageReference Include="Microsoft.ApplicationInsights" Version="2.23.0" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApexLegendsTracker.Common\ApexLegendsTracker.Common.csproj" />
   </ItemGroup>
 
 </Project>

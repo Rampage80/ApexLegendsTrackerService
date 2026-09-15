@@ -19,7 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApexLegendsTracker.WebAPI\ApexLegendsTracker.WebAPI.csproj" />
+    <ProjectReference Include="..\ApexLegendsTracker.GameStats\ApexLegendsTracker.GameStats.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="APIResponseData\*.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

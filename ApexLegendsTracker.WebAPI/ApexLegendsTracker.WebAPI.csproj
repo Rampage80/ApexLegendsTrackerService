@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-<ProjectReference Include="..\ApexLegendsTracker.Service\ApexLegendsTracker.Service.csproj" />
+    <ProjectReference Include="..\ApexLegendsTracker.AIChat\ApexLegendsTracker.AIChat.csproj" />
+    <ProjectReference Include="..\ApexLegendsTracker.GameStats\ApexLegendsTracker.GameStats.csproj" />
+    <ProjectReference Include="..\ApexLegendsTracker.Common\ApexLegendsTracker.Common.csproj" />
   </ItemGroup>
 
 </Project>

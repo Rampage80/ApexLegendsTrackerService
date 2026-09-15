@@ -2,13 +2,22 @@
   <Folder Name="/ApexLegendsTracker.WebAPI/">
     <Project Path="ApexLegendsTracker.WebAPI/ApexLegendsTracker.WebAPI.csproj" />
   </Folder>
-  <Folder Name="/ApexLegendsTracker.Service/">
-    <Project Path="ApexLegendsTracker.Service/ApexLegendsTracker.Service.csproj" />
-  </Folder>
   <Folder Name="/ApexLegendsTracker.WebAPI.Tests/">
     <Project Path="ApexLegendsTracker.WebAPI.Tests/ApexLegendsTracker.WebAPI.Tests.csproj" />
   </Folder>
-  <Folder Name="/ApexLegendsTracker.Service.Tests/">
-    <Project Path="ApexLegendsTracker.Service.Tests/ApexLegendsTracker.Service.Tests.csproj" />
+  <Folder Name="/ApexLegendsTracker.GameStats/">
+    <Project Path="ApexLegendsTracker.GameStats/ApexLegendsTracker.GameStats.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.GameStats.Tests/">
+    <Project Path="ApexLegendsTracker.GameStats.Tests/ApexLegendsTracker.GameStats.Tests.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.AIChat/">
+    <Project Path="ApexLegendsTracker.AIChat/ApexLegendsTracker.AIChat.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.AIChat.Tests/">
+    <Project Path="ApexLegendsTracker.AIChat.Tests/ApexLegendsTracker.AIChat.Tests.csproj" />
+  </Folder>
+  <Folder Name="/ApexLegendsTracker.Common/">
+    <Project Path="ApexLegendsTracker.Common/ApexLegendsTracker.Common.csproj" />
   </Folder>
 </Solution>

@@ -1,5 +1,7 @@
-namespace ApexLegendsTracker.Service.Options;
+namespace ApexLegendsTracker.GameStats.Options;
 
+
+//TODO: Move URL and Key to env variables
 public sealed class ApexApiOptions
 {
 	public const string SectionName = "ApexApi";

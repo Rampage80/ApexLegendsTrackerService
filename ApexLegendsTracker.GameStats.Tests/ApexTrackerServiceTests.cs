@@ -1,9 +1,9 @@
-using ApexLegendsTracker.Service.Services;
+using ApexLegendsTracker.GameStats.Service;
 using ApexLegendsTracker.Shared;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Extensibility;
 
-namespace ApexLegendsTracker.Service.Tests;
+namespace ApexLegendsTracker.GameStats.Tests;
 
 public sealed class ApexTrackerServiceTests
 {

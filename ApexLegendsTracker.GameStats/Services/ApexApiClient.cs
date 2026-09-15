@@ -1,10 +1,10 @@
 using System.Net;
 using System.Text.Json;
-using ApexLegendsTracker.Service.Options;
-using Microsoft.Extensions.Caching.Memory;
+using ApexLegendsTracker.Common.Caching;
+using ApexLegendsTracker.GameStats.Options;
 using Microsoft.Extensions.Options;
 
-namespace ApexLegendsTracker.Service.Services;
+namespace ApexLegendsTracker.GameStats.Service;
 
 public sealed class ApexApiClient : IApexApiClient
 {
@@ -14,17 +14,17 @@ public sealed class ApexApiClient : IApexApiClient
 	};
 
 	private readonly HttpClient _httpClient;
-	private readonly IMemoryCache _memoryCache;
+	private readonly ICacheProvider _cacheProvider;
 	private readonly ApexApiOptions _options;
 	private static readonly TimeSpan CacheDuration = TimeSpan.FromMinutes(1);
 
 	public ApexApiClient(
 		HttpClient httpClient,
-		IMemoryCache memoryCache,
+		ICacheProvider cacheProvider,
 		IOptions<ApexApiOptions> options)
 	{
 		_httpClient = httpClient;
-		_memoryCache = memoryCache;
+		_cacheProvider = cacheProvider;
 		_options = options.Value;
 
 		if (_httpClient.BaseAddress is null)
@@ -37,13 +37,11 @@ public sealed class ApexApiClient : IApexApiClient
 	{
 		string cacheKey = $"apex-api:{typeof(T).FullName}:{requestUri}";
 
-		return _memoryCache.GetOrCreateAsync(
+		return _cacheProvider.GetOrCreateAsync(
 			cacheKey,
-			entry =>
-			{
-				entry.AbsoluteExpirationRelativeToNow = CacheDuration;
-				return GetAsync<T>(requestUri, cancellationToken);
-			})!;
+			CacheDuration,
+			ct => GetAsync<T>(requestUri, ct),
+			cancellationToken);
 	}
 
 	public async Task<T> GetAsync<T>(string requestUri, CancellationToken cancellationToken = default)

@@ -1,7 +1,7 @@
 using System.Text.Json;
 using ApexLegendsTracker.Shared;
 
-namespace ApexLegendsTracker.Service.Tests;
+namespace ApexLegendsTracker.GameStats.Tests;
 
 public sealed class MapRotationResponseTests
 {

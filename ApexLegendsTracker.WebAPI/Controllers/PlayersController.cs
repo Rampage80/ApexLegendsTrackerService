@@ -1,5 +1,5 @@
 using ApexLegendsTracker.Shared;
-using ApexLegendsTracker.Service.Services;
+using ApexLegendsTracker.GameStats.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApexLegendsTracker.WebAPI.Controllers;

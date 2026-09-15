@@ -1,10 +1,11 @@
 using System.Net;
-using ApexLegendsTracker.Service.Options;
-using ApexLegendsTracker.Service.Services;
+using ApexLegendsTracker.Common.Caching;
+using ApexLegendsTracker.GameStats.Options;
+using ApexLegendsTracker.GameStats.Service;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 
-namespace ApexLegendsTracker.Service.Tests;
+namespace ApexLegendsTracker.GameStats.Tests;
 
 public sealed class ApexApiClientTests
 {
@@ -73,7 +74,7 @@ public sealed class ApexApiClientTests
 		HttpClient httpClient = new(handler) { BaseAddress = new Uri("https://api.example/") };
 		return new ApexApiClient(
 			httpClient,
-			new MemoryCache(new MemoryCacheOptions()),
+			new MemoryCacheProvider(new MemoryCache(new MemoryCacheOptions())),
 			Microsoft.Extensions.Options.Options.Create(new ApexApiOptions { ApiKey = apiKey }));
 	}
 

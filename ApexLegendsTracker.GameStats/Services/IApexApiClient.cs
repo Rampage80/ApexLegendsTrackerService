@@ -1,4 +1,4 @@
-namespace ApexLegendsTracker.Service.Services;
+namespace ApexLegendsTracker.GameStats.Service;
 
 public interface IApexApiClient
 {

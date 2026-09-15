@@ -1,6 +1,6 @@
 using ApexLegendsTracker.Shared;
 
-namespace ApexLegendsTracker.Service.Services;
+namespace ApexLegendsTracker.GameStats.Service;
 
 public interface IApexGlobalContract
 {
