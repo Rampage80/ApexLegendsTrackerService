@@ -41,7 +41,7 @@ public sealed class ChatControllerTests
 		OkObjectResult ok = Assert.IsType<OkObjectResult>(result.Result);
 		ChatResponse response = Assert.IsType<ChatResponse>(ok.Value);
 		Assert.Equal("Rotate early and hold high ground.", response.Reply);
-		Assert.Equal(ChatSource.Knowledge, response.Source);
+		Assert.Equal(ChatSource.AIChat, response.Source);
 	}
 
 	[Fact]

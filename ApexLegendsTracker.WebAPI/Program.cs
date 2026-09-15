@@ -17,7 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
-	// Chat responses expose ChatSource as a readable string (e.g. "Knowledge") rather than a raw number.
+	// Chat responses expose ChatSource as a readable string (e.g. "AIChat") rather than a raw number.
 	options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
 });
 builder.Services.AddMemoryCache();

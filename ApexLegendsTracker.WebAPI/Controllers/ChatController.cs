@@ -53,7 +53,7 @@ public sealed class ChatController : ControllerBase
 		try
 		{
 			string reply = await _AIChatService.AskAsync(request.Message, cancellationToken);
-			return Ok(new ChatResponse(reply, ChatSource.Knowledge));
+			return Ok(new ChatResponse(reply, ChatSource.AIChat));
 		}
 		catch (HttpRequestException exception) when (exception.StatusCode is not null)
 		{
