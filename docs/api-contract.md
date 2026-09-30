@@ -12,7 +12,7 @@ This is the backend repository's concise reference for AI-assisted API changes. 
 - `400` is returned for an empty player name or unsupported platform.
 - Upstream failures are surfaced with the upstream status code and an `apex_upstream_error` response containing a trace identifier.
 - Contract changes require coordinated updates to the backend, shared package, Web client, configuration, and relevant tests.
-- The API base URL and API key are configured through `ApexApi`; CORS origins are configured through `Cors:AllowedOrigins`.
+- The API base URL is configured through `ApexApi:BaseUrl`; the API key is supplied through the `APEXSERVICE_APEXAPIKEY` environment variable. CORS origins are configured through `Cors:AllowedOrigins`.
 - Map rotation is exposed as `GET /api/v1/map-rotation`, with optional `version=1|2`.
 - Predator thresholds are exposed as `GET /api/v1/predator-thresholds`.
 - Map rotation responses use `MapRotationResult`, with `BattleRoyale`, `Ranked`, `Ltm`, and `Wildcard` modes. Each mode has `Current` and `Next` entries sharing the `MapRotationEntry` shape. LTM entries include `EventName` when provided.

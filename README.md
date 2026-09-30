@@ -8,9 +8,15 @@ RESTful backend for ApexLegendsTracker.
 
 ## Configuration
 
-Set your Apex API key before running:
+Set the service keys in user level env variables before running. Keep them out of source control:
 
-- `ApexApi__ApiKey`
+- `APEXSERVICE_APEXAPIKEY`
+- `APEXSERVICE_OPENAIKEY`
+- `APEXSERVICE_APPINSIGHTS_CONNECTION_STRING`
+
+
+`APEXSERVICE_APEXAPIKEY` enables the Apex API Vendor service. 
+`APEXSERVICE_OPENAIKEY` enables the AI chat service. `APEXSERVICE_APPINSIGHTS_CONNECTION_STRING` enables Application Insights telemetry; the API runs without telemetry when it is not configured.
 
 Optional settings:
 

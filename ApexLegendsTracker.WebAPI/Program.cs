@@ -1,4 +1,3 @@
-using ApexLegendsTracker.Shared;
 using ApexLegendsTracker.GameStats.Options;
 using ApexLegendsTracker.GameStats.Service;
 using ApexLegendsTracker.AIChat.Options;
@@ -41,6 +40,15 @@ string? apexAIChatApiKey = builder.Configuration["APEXSERVICE_OPENAIKEY"]
 if (!string.IsNullOrWhiteSpace(apexAIChatApiKey))
 {
 	builder.Services.PostConfigure<ApexAIChatOptions>(options => options.ApiKey = apexAIChatApiKey);
+}
+
+// Custom env var name, kept out of appsettings/source; no-ops if unset.
+string? apexApiKey = builder.Configuration["APEXSERVICE_APEXAPIKEY"]
+	?? Environment.GetEnvironmentVariable("APEXSERVICE_APEXAPIKEY");
+
+if (!string.IsNullOrWhiteSpace(apexApiKey))
+{
+	builder.Services.PostConfigure<ApexApiOptions>(options => options.ApiKey = apexApiKey);
 }
 
 builder.Services
