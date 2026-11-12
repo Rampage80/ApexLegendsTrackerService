@@ -8,6 +8,8 @@ using Microsoft.Extensions.Options;
 
 namespace ApexLegendsTracker.AIChat.Service;
 
+//Adding junk comment to test
+
 public sealed class ApexAIChatService : IApexAIChatService
 {
 	private static readonly TimeSpan CacheDuration = TimeSpan.FromHours(24);
